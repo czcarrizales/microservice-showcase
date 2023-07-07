@@ -21,18 +21,17 @@ const Timestamp = () => {
     }
   return (
     <div id='timestamp-container'>
-        <h1>Timestamp Microservice</h1>
+        <h2>Timestamp</h2>
         <p>Input a valid date in YYYY-MM-DD format OR unix form to convert the date to unix and utc.</p>
-    <form onSubmit={postRequest} method="post">
-        <label>Regular Date</label>
-        <input type="text" value={date} onChange={handleInput} />
-        <input type="submit" />
+    <form onSubmit={postRequest} method="post" id='timestamp-form'>
+        <input id='timestamp-input' type="text" value={date} onChange={handleInput} />
+        <input id='timestamp-submit' type="submit" />
     </form>
-    <div>
+    <div id='timestamp-parse'>
         <h2>Unix</h2>
-        {unix}
+        <p>{unix}</p>
         <h2>UTC</h2>
-        {utc}
+        <p>{utc}</p>
     </div>
     </div>
   )
